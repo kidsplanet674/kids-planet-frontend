@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kids Planet Play School & Day Care
 
-## Getting Started
+Production website: static HTML, Mindu CSS, vanilla JavaScript and a PHP/PHPMailer contact handler. No React build or database is required.
 
-First, run the development server:
+## Client demo on GitHub Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+In repository Settings → Pages, select **GitHub Actions** as the source. Pushes to `main` build and publish the demo. The expected project URL is https://kidsplanet674.github.io/kids-planet-frontend/.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The workflow builds `_demo/` using `node scripts/build-demo.mjs`. Demo pages have noindex metadata, exclude PHP and PHPMailer, and replace the email form with an explicit demo notice and working WhatsApp/call links. No custom domain is configured. The existing Hostinger website is unaffected.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Hostinger production deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Upload the HTML pages, `blog/`, `assets/`, `robots.txt` and `sitemap.xml` to the final website document root. Do not upload `_demo/`, `.git/`, `.github/` or `scripts/`. Production HTML keeps the contact form and has no demo noindex directives.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Configure SMTP securely through hosting environment variables: `KP_SMTP_HOST`, `KP_SMTP_USER`, `KP_SMTP_PASSWORD`, `KP_SMTP_PORT`, and `KP_MAIL_FROM`. Never commit credentials. Test email delivery before launch.
