@@ -10,7 +10,7 @@
     let current = 0, paused = reduced.matches, timer, touchX;
     const schedule = () => {
       clearTimeout(timer);
-      if (!paused && !document.hidden && !slider.matches(':hover') && !slider.contains(document.activeElement)) timer = setTimeout(() => show(current + 1), 7000);
+      if (!paused && !document.hidden) timer = setTimeout(() => show(current + 1), 7000);
     };
     const show = index => {
       current = (index + slides.length) % slides.length;
@@ -24,10 +24,11 @@
     slider.querySelector('[data-slide-next]').addEventListener('click', () => show(current + 1));
     dots.forEach((dot,i) => dot.addEventListener('click', () => show(i)));
     pause.addEventListener('click', () => { paused = !paused; label(); schedule(); });
-    slider.addEventListener('mouseenter', () => clearTimeout(timer));
-    slider.addEventListener('mouseleave', schedule);
-    slider.addEventListener('focusin', () => clearTimeout(timer));
-    slider.addEventListener('focusout', () => setTimeout(schedule, 0));
+    slider.querySelectorAll('.kp-slider-controls, .kp-slide-copy a').forEach(control => {
+      control.addEventListener('mouseenter', () => clearTimeout(timer));
+      control.addEventListener('mouseleave', schedule);
+    });
+    slider.addEventListener('focusin', () => { paused = true; label(); clearTimeout(timer); });
     document.addEventListener('visibilitychange', schedule);
     reduced.addEventListener('change', () => { paused = reduced.matches; label(); schedule(); });
     slider.addEventListener('touchstart', event => { touchX = event.changedTouches[0].clientX; }, {passive:true});
