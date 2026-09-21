@@ -1,11 +1,8 @@
 @charset "UTF-8";
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Mindu – College, School & Online Courses
-    Author: Theme_Pure
-    Support: https://help.themepure.net/support/
-    Description: Mindu – College, School & Online Courses
-    Version: 1.0
+    Site stylesheet: Kids Planet Play School & Day Care
+    Customised school website presentation
 
 -----------------------------------------------------------------------------------
 
@@ -130,7 +127,7 @@ li,
   --tp-ff-body: 'Inter', sans-serif;
   --tp-ff-heading: 'Plus Jakarta Sans', sans-serif;
   --tp-ff-outfit: 'Outfit', sans-serif;
-  --tp-ff-fontawesome: "Font Awesome 6 Pro";
+  --tp-ff-fontawesome: "Font Awesome 6 Free";
   /**
   @color declaration
   */
@@ -611,6 +608,7 @@ input[type=color] {
 
 .tp-ff-fontawesome {
   font-family: var(--tp-ff-fontawesome);
+  font-weight: 900;
 }
 
 /* Font weight */
@@ -1594,7 +1592,7 @@ input[type=color] {
   right: 0;
   font-family: var(--tp-ff-fontawesome);
   color: var(--tp-common-black);
-  font-weight: 500;
+  font-weight: 900;
   pointer-events: none;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
@@ -2189,6 +2187,7 @@ input[type=color] {
   content: "\f107";
   font-family: var(--tp-ff-fontawesome);
   margin-left: 7px;
+  font-weight: 900;
 }
 .tp-header-menu-item > span:hover {
   cursor: pointer;
@@ -2477,7 +2476,7 @@ input[type=color] {
 .tp-menu-dropdown nav ul li .sub-menu li.menu-item-has-children > a:after {
   content: "\f107";
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 900;
   margin-left: 2px;
   color: var(--tp-common-black);
   display: inline-block;
@@ -4225,7 +4224,7 @@ input[type=color] {
   box-sizing: border-box;
   position: absolute;
   content: "\f00c";
-  font-weight: 700;
+  font-weight: 900;
   font-family: var(--tp-ff-fontawesome);
   font-size: 10px;
   color: var(--tp-common-white);
@@ -6646,7 +6645,7 @@ input[type=color] {
 }
 .tp-faq-button::before, .tp-faq-button:after {
   content: "\f068";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   position: absolute;
   right: 0;
   top: 18px;
@@ -6657,7 +6656,7 @@ input[type=color] {
   border-radius: 30px;
   line-height: 34px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 900;
   color: var(--tp-common-black);
   transition: all 0.5s ease;
 }
@@ -6978,7 +6977,7 @@ input[type=color] {
   box-sizing: border-box;
   position: absolute;
   content: "\f00c";
-  font-weight: 700;
+  font-weight: 900;
   font-family: var(--tp-ff-fontawesome);
   font-size: 14px;
   color: var(--tp-common-white);

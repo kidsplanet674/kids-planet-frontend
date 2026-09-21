@@ -85,7 +85,7 @@ body {
   font-weight: 800;
 }
 
-/* Retain Mindu's grid, card shapes and typography across every page. */
+/* Keep the shared grid, card shapes and typography consistent across every page. */
 .kp-slider { position: relative; background: #1b1d1f; color: white; }
 .kp-slide { position: relative; isolation: isolate; }
 .kp-slide[hidden] { display: none; }
