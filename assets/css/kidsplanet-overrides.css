@@ -279,6 +279,48 @@ button:disabled { opacity: .65; cursor: wait; }
   .kp-notices-card { grid-template-columns: minmax(210px, .8fr) minmax(340px, 1.4fr); }
   .kp-notices-card > .tp-service-btn { grid-column: 2; }
 }
+/* Shared content edges and spacing; full-width section backgrounds stay intact. */
+body .container { width: 90%; max-width: 1440px; margin-inline: auto; }
+body .container.kp-article { max-width: 880px; }
+main > section.pt-100 { padding-top: 72px; }
+main > section.pb-70 { padding-bottom: 42px; }
+main > section.pt-70 { padding-top: 56px; }
+main > section.pb-40 { padding-bottom: 26px; }
+.tp-section-title-wrap.mb-50 { margin-bottom: 32px; }
+.tp-about-area .tp-about-content,
+.tp-misson-area .tp-about-content { padding: 0 0 0 24px; }
+.tp-service-area .tp-service-item { padding: 24px 16px; }
+.tp-blog-area .row > div { display: flex; }
+.tp-blog-item { display: flex; flex-direction: column; width: 100%; }
+.tp-blog-content { display: flex; flex-direction: column; flex: 1; }
+.tp-blog-content > .tp-service-btn { margin-top: auto; align-self: flex-start; }
+.kp-class-card { display: flex; flex-direction: column; }
+.kp-class-card .tp-course-content { display: flex; flex-direction: column; flex: 1; padding: 24px 20px; }
+.kp-class-card p { min-height: 0; }
+.kp-class-card .tp-service-btn { margin-top: auto; align-self: flex-start; }
+.tp-footer-area.pt-110 { padding-top: 64px; }
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .tp-main-menu nav ul { gap: 18px; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .kp-notices-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 20px; }
+  .kp-notices-card > .tp-service-btn { grid-column: 2; }
+}
+@media (max-width: 1199px) {
+  .tp-misson-area .tp-about-content { padding: 0; }
+}
+@media (max-width: 991px) {
+  .tp-about-area .tp-about-content { padding: 0; }
+}
+@media (max-width: 767px) {
+  body .container { width: calc(100% - 24px); padding-inline: 12px; }
+  main > section.pt-100 { padding-top: 48px; }
+  main > section.pb-70 { padding-bottom: 18px; }
+  main > section.pt-70 { padding-top: 40px; }
+  main > section.pb-40 { padding-bottom: 10px; }
+  .tp-section-title-wrap.mb-50 { margin-bottom: 24px; }
+  .tp-footer-area.pt-110 { padding-top: 48px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
