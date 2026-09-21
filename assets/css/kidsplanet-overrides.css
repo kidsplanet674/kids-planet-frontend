@@ -222,6 +222,16 @@ a > .fa-whatsapp { margin-right: 6px; }
 .kp-faq[open] { background: var(--tp-grey-2); }
 .kp-principal-message { padding-left: 48px; }
 .kp-article { max-width: 880px; }
+.kp-album-intro { max-width: 880px; margin: 0 auto 40px; }
+.kp-album-intro a { text-decoration: underline; }
+.kp-album-card { border: 1px solid #e4ded6; border-radius: 20px; overflow: hidden; height: calc(100% - 30px); margin-bottom: 30px; background: white; }
+.kp-album-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.kp-album-card a { display: block; height: 100%; }
+.kp-album-card a > div { padding: 24px; }
+.kp-album-card h2 { font-size: 26px; }
+.kp-album-card span { font-weight: 700; color: var(--kp-orange); }
+.tp-breadcrumb-area > .container { position: relative; z-index: 1; }
+.tp-breadcrumb-area > .container > p a { color: white; }
 .kp-article h2 { font-size: 28px; margin-top: 32px; margin-bottom: 16px; }
 .kp-article ul { padding-left: 24px; }
 .kp-article li { margin-bottom: 12px; }
