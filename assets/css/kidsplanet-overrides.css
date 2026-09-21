@@ -224,6 +224,14 @@ a > .fa-whatsapp { margin-right: 6px; }
 .kp-article { max-width: 880px; }
 .kp-album-intro { max-width: 880px; margin: 0 auto 40px; }
 .kp-album-intro a { text-decoration: underline; }
+.kp-album-banner { isolation: isolate; }
+.kp-album-banner::before { z-index: 0; background: rgba(15,17,19,.65); }
+.kp-album-banner .tp-breadcrumb-thumb { z-index: -1; }
+.kp-album-details { margin-top: 40px; }
+.kp-album-details h2 { font-size: clamp(24px,2.3vw,32px); margin-bottom: 16px; }
+.kp-album-details section { margin-bottom: 28px; }
+.kp-album-details ul { padding-left: 22px; }
+.kp-album-details li { margin-bottom: 12px; }
 .kp-album-card { border: 1px solid #e4ded6; border-radius: 20px; overflow: hidden; height: calc(100% - 30px); margin-bottom: 30px; background: white; }
 .kp-album-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 .kp-album-card a { display: block; height: 100%; }
