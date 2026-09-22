@@ -19,7 +19,10 @@ const banner = (title, photo = 'assets/images/2.webp') => `<section class="tp-br
 const textHeadings = ['Activities at Kids Planet', 'Learning through shared experiences', 'Visit our play school in Old Town'];
 for (const album of albums) {
   fs.mkdirSync(path.join(root, 'assets/images/gallery', album.slug), {recursive:true});
-  for (const [id] of album.photos) fs.copyFileSync(path.join(root, `assets/images/${id}.webp`), path.join(root, imagePath(album,id)));
+  for (const [id] of album.photos) {
+    const destination = path.join(root, imagePath(album, id));
+    if (!fs.existsSync(destination)) fs.copyFileSync(path.join(root, `assets/images/${id}.webp`), destination);
+  }
   const photos = album.photos.map(([id, caption]) => `<div class="col-lg-4 col-md-6"><figure class="tp-gallery-thumb mb-30"><a href="${imagePath(album,id)}" class="kp-gallery-link" aria-label="View photo: ${esc(caption)}"><img src="${imagePath(album,id)}" alt="${esc(caption)}" loading="lazy" decoding="async" width="1200" height="900"></a><figcaption class="mt-15">${esc(caption)}</figcaption></figure></div>`).join('');
   const details = album.paragraphs.map((p,i)=>`<section><h2>${textHeadings[i]}</h2><ul>${p.split(/(?<=[.!?])\s+/).map(sentence=>`<li>${esc(sentence)}</li>`).join('')}</ul></section>`).join('');
   const main = banner(album.title,imagePath(album,album.photos[0][0]))+`<section class="pt-100 pb-70"><div class="container"><p>${album.photos.length} photographs · Select a photo to view it full size.</p><div class="row">${photos}</div><div class="kp-album-intro kp-album-details">${details}<p><a href="contact.html">Enquire about Kids Planet</a> · <a href="daycare-facility.html">Explore daycare facilities</a></p></div><a class="tp-btn" href="gallery.html">Back to all albums</a></div></section>`;
