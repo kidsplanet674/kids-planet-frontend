@@ -93,9 +93,14 @@
     document.querySelectorAll('[data-kp-count]').forEach(el => observer.observe(el));
   }
   const form = document.querySelector('#contact-form');
+  const formReady = form && /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(form.getAttribute('action'));
+  if (formReady) {
+    form.querySelector('[type="submit"]').disabled = false;
+    form.querySelector('.ajax-response').textContent = '';
+  }
   if (form) form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!formReady || !form.reportValidity()) return;
     const submit = form.querySelector('[type="submit"]');
     const status = form.querySelector('.ajax-response');
     submit.disabled = true;
@@ -104,9 +109,9 @@
     status.className = 'ajax-response mt-20';
     try {
       const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-      const data = await response.json();
-      if (!response.ok || !data.success) throw new Error(data.message || 'Your enquiry could not be sent. Please call 9337164626 or use WhatsApp.');
-      status.textContent = data.message;
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.errors?.map(item => item.message).join(' ') || 'Your enquiry could not be sent. Please call 9337164626 or use WhatsApp.');
+      status.textContent = 'Thank you! Your enquiry has been submitted. The school will get back to you.';
       status.classList.add('success');
       form.reset();
     } catch (error) {

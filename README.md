@@ -1,15 +1,22 @@
 # Kids Planet Play School & Day Care
 
-Production website: static HTML, Mindu CSS, vanilla JavaScript and a PHP/PHPMailer contact handler. No React build or database is required.
+Static HTML, CSS and vanilla JavaScript website. Contact enquiries use Formspree.
 
-## Client demo on GitHub Pages
+## Contact setup
 
-In repository Settings → Pages, select **GitHub Actions** as the source. Pushes to `main` build and publish the demo. The expected project URL is https://kidsplanet674.github.io/kids-planet-frontend/.
+1. Sign in at https://formspree.io/ and create a form named Kids Planet Enquiries.
+2. Set kidsplanet674@gmail.com as the notification recipient and complete any email verification requested by Formspree.
+3. Copy the form endpoint from its Integration tab. It looks like https://formspree.io/f/xxxxxxxx.
+4. The endpoint https://formspree.io/f/xnpndkqn is configured in contact.html in both website copies. The form supports standard HTML submission and JavaScript success/error feedback.
+5. Review spam protection in Formspree. If restricting domains, allow both the GitHub Pages demo and the final school domain.
+6. Upload the updated static files. No hosting email configuration is needed.
+7. Submit a clearly labelled test enquiry from the deployed website. Check the Formspree dashboard and school inbox, including Spam. A success message alone does not prove inbox delivery.
+8. Check your account submission allowance and notifications periodically. Keep the Formspree account under school control.
 
-The workflow builds `_demo/` using `node scripts/build-demo.mjs`. Demo pages have noindex metadata, exclude PHP and PHPMailer, and replace the email form with an explicit demo notice and working WhatsApp/call links. No custom domain is configured. The existing Hostinger website is unaffected.
+## GitHub Pages
 
-## Hostinger production deployment
+Settings → Pages → GitHub Actions. Pushes to main build _demo/ using node scripts/build-demo.mjs. Demo pages have noindex metadata and retain the Formspree form. No custom domain is configured.
 
-Upload the HTML pages, `blog/`, `assets/`, `robots.txt` and `sitemap.xml` to the final website document root. Do not upload `_demo/`, `.git/`, `.github/` or `scripts/`. Production HTML keeps the contact form and has no demo noindex directives.
+## Hostinger
 
-Configure SMTP securely through hosting environment variables: `KP_SMTP_HOST`, `KP_SMTP_USER`, `KP_SMTP_PASSWORD`, `KP_SMTP_PORT`, and `KP_MAIL_FROM`. Never commit credentials. Test email delivery before launch.
+Upload HTML pages, blog/, assets/, robots.txt and sitemap.xml. Exclude _demo/, .git/, .github/ and scripts/. Use production files rather than the noindex demo output.
