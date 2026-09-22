@@ -3,11 +3,6 @@
     "slug": "sports-outdoor-activities",
     "title": "Sports & Outdoor Activities",
     "description": "Explore outdoor play and group activities at Kids Planet Play School in Old Town, Bhubaneswar. View real school photos and enquire about admissions.",
-    "paragraphs": [
-      "Outdoor play gives young children opportunities to move, explore and spend time with friends. At Kids Planet Play School & Day Care in Old Town, Bhubaneswar, our photographs capture everyday moments of active play, tricycle rides and group activities with teachers nearby. These experiences make movement an enjoyable part of school life, alongside classroom learning and creative activities.",
-      "For families exploring a play school in Old Town BBSR, this album offers a closer look at the spaces and shared experiences children enjoy. Taking turns, joining a group and trying a new activity can help children practise communication, coordination and growing independence at their own pace.",
-      "Our Preschool, Nursery, LKG and UKG programmes welcome children aged two to six. Browse these outdoor activity photos, then contact Kids Planet to discuss your child’s age group, admission or daycare needs. You can also arrange a school visit to learn more about our daily routines and facilities."
-    ],
     "photos": [
       [
         "outdoor-group-activities",
@@ -53,17 +48,21 @@
         "38",
         "Friends playing a group game in the courtyard"
       ]
-    ]
+    ],
+    "heading": "Benefits of outdoor activities for young children",
+    "points": [
+      "Movement and coordination: Active games and tricycle play give children opportunities to practise balance, steering and moving confidently through a shared space.",
+      "Taking turns and teamwork: Group activities encourage children to wait, listen to simple instructions and enjoy playing alongside their friends.",
+      "Curiosity and independence: Exploring beyond the classroom invites children to notice their surroundings, make choices and try something new with encouragement.",
+      "Communication through play: Shared games give children reasons to ask questions, explain ideas and celebrate small achievements together."
+    ],
+    "seoHeading": "Outdoor play at our play school in Old Town, Bhubaneswar",
+    "seoText": "At Kids Planet Play School & Day Care, outdoor activities complement classroom learning for children aged 2–6. Families looking for a play school in Old Town BBSR can explore these photographs for a glimpse of our school community. We offer Preschool, Nursery, LKG and UKG, with daycare for all four age groups. Contact us to discuss admissions or arrange a visit."
   },
   {
     "slug": "cultural-activities",
     "title": "Cultural Activities & Celebrations",
     "description": "See Holi, Christmas and Republic Day celebrations at Kids Planet Play School in Old Town, Bhubaneswar. Explore our cultural activities photo album.",
-    "paragraphs": [
-      "Celebrations bring colour, conversation and shared memories to the early years. This album from Kids Planet Play School & Day Care in Old Town, Bhubaneswar, brings together photographs of Holi, Christmas, Republic Day and special school occasions. Children and teachers come together through festive activities, colourful decorations and moments of participation that make school life memorable.",
-      "Cultural activities offer opportunities to discover traditions, express ideas and enjoy being part of a group. Looking through these photographs gives parents a glimpse of the friendships and shared experiences that complement everyday preschool learning. Each child can build familiarity and confidence through encouragement and participation at a comfortable pace.",
-      "If you are looking for a preschool in Old Town BBSR, explore our celebration photos alongside our classroom and outdoor activity albums. Kids Planet offers Preschool, Nursery, LKG and UKG for ages two to six, with daycare available for these age groups. Contact our team to enquire about admission or arrange a visit."
-    ],
     "photos": [
       [
         "teachers-day-team",
@@ -145,17 +144,21 @@
         "1",
         "Children and teachers celebrating together"
       ]
-    ]
+    ],
+    "heading": "Benefits of cultural activities and celebrations",
+    "points": [
+      "Creative expression: Dressing up, drama and festive activities give children different ways to express ideas through movement, colour and imagination.",
+      "Confidence in participation: Joining a celebration offers opportunities to take a small role, try a performance and share a moment with friends and teachers.",
+      "Discovering traditions: Occasions such as Independence Day, Janmashtami and Ganesh Puja introduce children to stories, symbols and celebrations in an approachable way.",
+      "Belonging and appreciation: Teachers’ Day and shared school events create opportunities to thank others, join in together and build happy memories."
+    ],
+    "seoHeading": "Celebrations at Kids Planet in Old Town, Bhubaneswar",
+    "seoText": "Our cultural activity album shows another side of everyday life at Kids Planet Play School & Day Care. Parents exploring a preschool in Old Town BBSR can see how celebrations bring our school community together. We welcome children aged 2–6 in Preschool, Nursery, LKG and UKG, with daycare available for these age groups. Speak to our team about admission and visiting the school."
   },
   {
     "slug": "classroom-school-life",
     "title": "Classroom & School Life",
     "description": "Browse classroom activities, creative learning and school life at Kids Planet Play School & Day Care in Old Town, Bhubaneswar.",
-    "paragraphs": [
-      "Explore everyday classroom activities and school memories at Kids Planet Play School & Day Care in Old Town, Bhubaneswar. From drawing and colouring to shared achievements, these photographs offer a glimpse of our early learning environment. Children have opportunities to explore colours, concentrate on a creative task and enjoy the company of friends and teachers.",
-      "Small experiences can become meaningful steps in a child’s school journey. A familiar classroom, gentle guidance and time to practise help make learning approachable. Our photo collection includes creative activities, certificate moments and views of the school, giving families a closer look before arranging a visit.",
-      "Parents looking for a play school in Old Town BBSR can explore these images alongside our cultural and outdoor activity albums. Kids Planet offers Preschool, Nursery, LKG and UKG for children aged two to six. Contact the school to discuss the right class for your child, ask about daycare or enquire about admission."
-    ],
     "photos": [
       [
         "classroom-activities",
@@ -205,6 +208,15 @@
         "10",
         "Republic Day decorations in the school courtyard"
       ]
-    ]
+    ],
+    "heading": "Benefits of classroom activities in the early years",
+    "points": [
+      "Fine motor practice: Drawing, colouring and handling classroom materials give children opportunities to practise small hand movements and develop familiarity with everyday learning tools.",
+      "Language and listening: Talking with teachers and classmates helps children practise describing their work, asking questions and listening to one another.",
+      "Attention and problem-solving: Creative tasks encourage children to explore colours and shapes, make choices and stay with an activity at their own pace.",
+      "Comfort with school routines: Shared classroom experiences offer practice in taking turns, working alongside friends and becoming familiar with a learning environment."
+    ],
+    "seoHeading": "Preschool classroom learning in Old Town, Bhubaneswar",
+    "seoText": "Kids Planet Play School & Day Care offers Preschool, Nursery, LKG and UKG for children aged 2–6. For families looking for a play school in Old Town BBSR, these classroom photographs provide a glimpse of creative learning and school life. Daycare is also available for all four age groups. Contact us to explore the right class for your child and arrange a school visit."
   }
 ]

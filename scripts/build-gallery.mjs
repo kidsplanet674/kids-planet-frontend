@@ -16,7 +16,7 @@ function page(title, description, filename, main) {
     .replace(/<main id="main">[\s\S]*?<\/main>/, `<main id="main">${main}</main>`);
 }
 const banner = (title, photo = 'assets/images/2.webp') => `<section class="tp-breadcrumb-area tp-breadcrumb-bg kp-album-banner p-relative"><div class="tp-breadcrumb-thumb"><img src="${photo}" alt="" width="1200" height="900" fetchpriority="high"></div><div class="container"><h1 class="tp-breadcrumb-title text-center">${esc(title)}</h1><p class="text-center"><a href="gallery.html">Gallery</a></p></div></section>`;
-const textHeadings = ['Activities at Kids Planet', 'Learning through shared experiences', 'Visit our play school in Old Town'];
+
 for (const album of albums) {
   fs.mkdirSync(path.join(root, 'assets/images/gallery', album.slug), {recursive:true});
   for (const [id] of album.photos) {
@@ -24,7 +24,7 @@ for (const album of albums) {
     if (!fs.existsSync(destination)) fs.copyFileSync(path.join(root, `assets/images/${id}.webp`), destination);
   }
   const photos = album.photos.map(([id, caption]) => `<div class="col-lg-4 col-md-6"><figure class="tp-gallery-thumb mb-30"><a href="${imagePath(album,id)}" class="kp-gallery-link" aria-label="View photo: ${esc(caption)}"><img src="${imagePath(album,id)}" alt="${esc(caption)}" loading="lazy" decoding="async" width="1200" height="900"></a><figcaption class="mt-15">${esc(caption)}</figcaption></figure></div>`).join('');
-  const details = album.paragraphs.map((p,i)=>`<section><h2>${textHeadings[i]}</h2><ul>${p.split(/(?<=[.!?])\s+/).map(sentence=>`<li>${esc(sentence)}</li>`).join('')}</ul></section>`).join('');
+  const details = `<section><h2>${esc(album.heading)}</h2><ul>${album.points.map(point=>{const split=point.indexOf(':');return `<li><strong>${esc(point.slice(0,split))}:</strong>${esc(point.slice(split+1))}</li>`;}).join('')}</ul></section><section><h2>${esc(album.seoHeading)}</h2><p>${esc(album.seoText)}</p></section><section><h2>Contact Kids Planet</h2><p>Plot No-1897, Badhei Banka Chowk, Old Town, Bhubaneswar, Odisha 751002</p><p>Call: <a href="tel:+919337164626">9337164626</a> · Email: <a href="mailto:kidsplanet674@gmail.com">kidsplanet674@gmail.com</a></p><p>School: 9:30 am–12:30 pm · Daycare: 8:30 am–7:30 pm</p><p><a class="tp-btn" href="https://wa.me/919337164626"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Enquire Now</a></p></section>`;
   const main = banner(album.title,imagePath(album,album.photos[0][0]))+`<section class="pt-100 pb-70"><div class="container"><p>${album.photos.length} photographs · Select a photo to view it full size.</p><div class="row">${photos}</div><div class="kp-album-intro kp-album-details">${details}<p><a href="contact.html">Enquire about Kids Planet</a> · <a href="daycare-facility.html">Explore daycare facilities</a></p></div><a class="tp-btn" href="gallery.html">Back to all albums</a></div></section>`;
   fs.writeFileSync(path.join(root,`${album.slug}.html`),page(album.title,album.description,`${album.slug}.html`,main));
 }
@@ -33,4 +33,4 @@ fs.writeFileSync(path.join(root,'gallery.html'),page('School Photo Albums','Expl
 let sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 for(const a of albums) if(!sitemap.includes(`/${a.slug}.html`)) sitemap=sitemap.replace('</urlset>',`  <url><loc>https://www.kidsplanetbbsr.in/${a.slug}.html</loc></url>\n</urlset>`);
 fs.writeFileSync(path.join(root,'sitemap.xml'),sitemap);
-console.log(albums.map(a=>`${a.title}: ${a.photos.length} photos, ${a.paragraphs.join(' ').split(/\s+/).length} words`).join('\n'));
+console.log(albums.map(a=>`${a.title}: ${a.photos.length} photos, ${[...a.points,a.seoText].join(' ').split(/\s+/).length} words`).join('\n'));
